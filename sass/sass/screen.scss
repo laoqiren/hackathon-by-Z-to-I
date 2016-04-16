@@ -4,3 +4,99 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+
+$height:25%;
+$left-part:30%;
+$right-part:58%;
+$base_font: "微软雅黑";
+$title_size: 16px;
+
+
+html,body {
+    width: 100%;
+    height:100%;
+}
+body {
+    background:url('../../images/bag.jpg');
+    background-position:50% 50%;
+    font-family:$base_font;
+}
+.header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background-color:#cacaca;
+    opacity:0.6;
+    h1 {
+        text-align:center;
+        font-size:30px;
+        font-weight:bold;
+    }
+}
+img {
+    width:100%;
+    height:100%;
+}
+.first {
+    margin-top:20%;
+}
+.show-time {
+    color:red;
+}
+.container {
+    width:100%;
+    height:$height;
+    overflow:hidden;
+    margin-bottom:10%;
+    .sub {
+        float:left;
+    }
+    .left-part {
+        width:$left-part;
+        height:100%;
+        box-sizing:border-box;
+        margin-left:5%;
+    }
+    .right-part {
+        width:$right-part;
+        height:100%;
+        margin-left:5%;
+        overflow :hidden;
+        .title {
+            height: 40%;
+            text-align:center;
+            font-family:$base_font;
+            font-size: $title_size;
+            font-weight: bold;
+            display: table;
+            h2 {
+                display:table-cell;
+                vertical-align:middle;
+            }
+        }
+        .book {
+            height:40%;
+            text-align:center;
+            box-sizing:border-box;
+            padding-top:20px;
+            button {
+                width: 45%;
+                height: 80%;
+                font-size:15px;
+                margin-bottom:0;
+            }
+            button.left {
+                margin-right:5%;
+            }
+        }
+        .show-progress {
+            height:20px;
+            margin-bottom:5%;
+            font-size:15px;
+            line-height:20px;
+            font-weight:bold;
+        }
+    }
+}

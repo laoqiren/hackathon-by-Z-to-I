@@ -1,0 +1,67 @@
+@import "compass/reset";
+$header_size: 22px;
+$header_height:10%;
+$poster_height:40%;
+$footer_height:10%;
+body,html {
+    width:100%;
+    height:100%;
+}
+body {
+    background:url('../../images/bag.jpg');
+    background-position:50% 50%;
+    font-family:"微软雅黑";
+}
+.header {
+    width:70%;
+    height:$header_height;
+    margin:10% auto 0 auto;
+    text-align:center;
+    h1 {
+        font-size: $header_size;
+        font-weight:bold;
+    }
+}
+.poster {
+    margin:0 auto;
+    width:96%;
+    text-align:center;
+    overflow:hidden;
+    img {
+        width:86%;
+        height:auto;
+    }
+}
+.content-detail {
+    margin-top:5%;
+    margin-bottom:30%;
+    font-size:17px;
+    dt {
+        font-size:20px;
+        font-weight:bold;
+        margin-bottom:10px;
+    }
+    dd {
+        text-indent:30px;
+        margin-bottom:10px;
+    }
+    p {
+        margin:0 auto;
+        text-align:center;
+    }
+    .show-time {
+        color:red;
+    }
+}
+.footer {
+    height:$footer_height;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    left:0;
+    button {
+        width:100%;
+        height:100%;
+        font-size:35px;
+    }
+}

@@ -1,8 +1,4 @@
 @charset "UTF-8";
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 5, ../../../../../../Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -68,114 +64,83 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 15, ../sass/screen.scss */
-html, body {
+/* line 6, ../sass/sub.scss */
+body, html {
   width: 100%;
   height: 100%;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 10, ../sass/sub.scss */
 body {
   background: url("../../images/bag.jpg");
   background-position: 50% 50%;
   font-family: "微软雅黑";
 }
 
-/* line 24, ../sass/screen.scss */
+/* line 15, ../sass/sub.scss */
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background-color: #cacaca;
-  opacity: 0.6;
-}
-/* line 32, ../sass/screen.scss */
-.header h1 {
+  width: 70%;
+  height: 10%;
+  margin: 10% auto 0 auto;
   text-align: center;
-  font-size: 30px;
+}
+/* line 20, ../sass/sub.scss */
+.header h1 {
+  font-size: 22px;
   font-weight: bold;
 }
 
-/* line 38, ../sass/screen.scss */
-img {
-  width: 100%;
-  height: 100%;
+/* line 25, ../sass/sub.scss */
+.poster {
+  margin: 0 auto;
+  width: 96%;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 30, ../sass/sub.scss */
+.poster img {
+  width: 86%;
+  height: auto;
 }
 
-/* line 42, ../sass/screen.scss */
-.first {
-  margin-top: 20%;
+/* line 35, ../sass/sub.scss */
+.content-detail {
+  margin-top: 5%;
+  margin-bottom: 30%;
+  font-size: 17px;
 }
-
-/* line 45, ../sass/screen.scss */
-.show-time {
+/* line 39, ../sass/sub.scss */
+.content-detail dt {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* line 44, ../sass/sub.scss */
+.content-detail dd {
+  text-indent: 30px;
+  margin-bottom: 10px;
+}
+/* line 48, ../sass/sub.scss */
+.content-detail p {
+  margin: 0 auto;
+  text-align: center;
+}
+/* line 52, ../sass/sub.scss */
+.content-detail .show-time {
   color: red;
 }
 
-/* line 48, ../sass/screen.scss */
-.container {
+/* line 56, ../sass/sub.scss */
+.footer {
+  height: 10%;
   width: 100%;
-  height: 25%;
-  overflow: hidden;
-  margin-bottom: 10%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
-/* line 53, ../sass/screen.scss */
-.container .sub {
-  float: left;
-}
-/* line 56, ../sass/screen.scss */
-.container .left-part {
-  width: 30%;
+/* line 62, ../sass/sub.scss */
+.footer button {
+  width: 100%;
   height: 100%;
-  box-sizing: border-box;
-  margin-left: 5%;
-}
-/* line 62, ../sass/screen.scss */
-.container .right-part {
-  width: 58%;
-  height: 100%;
-  margin-left: 5%;
-  overflow: hidden;
-}
-/* line 67, ../sass/screen.scss */
-.container .right-part .title {
-  height: 40%;
-  text-align: center;
-  font-family: "微软雅黑";
-  font-size: 16px;
-  font-weight: bold;
-  display: table;
-}
-/* line 74, ../sass/screen.scss */
-.container .right-part .title h2 {
-  display: table-cell;
-  vertical-align: middle;
-}
-/* line 79, ../sass/screen.scss */
-.container .right-part .book {
-  height: 40%;
-  text-align: center;
-  box-sizing: border-box;
-  padding-top: 20px;
-}
-/* line 84, ../sass/screen.scss */
-.container .right-part .book button {
-  width: 45%;
-  height: 80%;
-  font-size: 15px;
-  margin-bottom: 0;
-}
-/* line 90, ../sass/screen.scss */
-.container .right-part .book button.left {
-  margin-right: 5%;
-}
-/* line 94, ../sass/screen.scss */
-.container .right-part .show-progress {
-  height: 20px;
-  margin-bottom: 5%;
-  font-size: 15px;
-  line-height: 20px;
-  font-weight: bold;
+  font-size: 35px;
 }
