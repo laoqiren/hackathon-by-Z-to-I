@@ -24,7 +24,11 @@
                 echo api\json::create(400,'eventId参数错误',array());
             } else {
                 $data  = $events->getEvent($eventId);
-                echo api\json::create(200,'成功',$data);
+                if($data == null){
+                    echo api\json::create(201,'成功，但是没有数据',$data);
+                }else{
+                    echo api\json::create(200,'成功',$data);
+                }
             }
 
             break;

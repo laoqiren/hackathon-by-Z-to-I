@@ -25,13 +25,9 @@ class redis
     public function setEvent($data){
         self::$_redis->watch('event:'.$data['id']);
         self::$_redis->multi();
-        $event = array(
-            'title'=>$data['title'],
-            'beginTime'=>$data['beginTime'],
-            'endTime'=>$data['endTime'],
-            'total'=>$data['total']
-        );
-        self::$_redis->hMset('event:'.$data['id'],$event);
+        if($data != array()){
+            self::$_redis->hMset('event:'.$data['id'],$data);
+        }
         self::$_redis->exec();
     }
     /**

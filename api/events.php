@@ -37,7 +37,7 @@ class events
      * @return mixed
      */
     public function getEvent($eventId){
-        if($res = redis::getInstance()->getEvent($eventId) == array()){
+        if(($res = redis::getInstance()->getEvent($eventId) )== array()){
             $eventId = (int) $eventId;
             $sql = 'select * from events WHERE id = '.$eventId;
             $res = self::$_db -> query($sql);
