@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 01:03:17
+* @Last Modified time: 2016-04-17 01:29:20
 */
 
 $(document).ready(function(){
@@ -53,7 +53,7 @@ $(document).ready(function(){
                 "<div class='progress progress-striped active'>"+"<div class='progress-bar progress-bar-danger' style='width:80%''></div>"+"</div>"+"</div>"+"</div>";
                     var $addObject = $(addString);
                     console.log($addObject);
-                    $(body).append($addObject);
+                    $(body).eq(0).append($addObject);
                 }
 
             }
