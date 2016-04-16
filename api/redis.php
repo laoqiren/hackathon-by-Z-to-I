@@ -27,6 +27,7 @@ class redis
         self::$_redis->multi();
         if($data != array()){
             self::$_redis->hMset('event:'.$data['id'],$data);
+            self::$_redis->expire('event:'.$data['id'],30);
         }
         self::$_redis->exec();
     }

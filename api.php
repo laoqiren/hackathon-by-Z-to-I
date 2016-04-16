@@ -5,7 +5,7 @@
         require_once BASEDIR.'/'.$class.'.php';
     }
     spl_autoload_register('load');
-    header('Content-type:application/json');
+    header('Content-type:application/json;charset=utf-8');
     $action = isset($_GET['action'])?$_GET['action']:'';
     switch ($action) {
         case 'eventlist':
@@ -30,9 +30,16 @@
                     echo api\json::create(200,'成功',$data);
                 }
             }
-
             break;
         case 'ticket':
+            $ticket = new api\ticket();
+            $eventId = isset($_GET['eventId'])?(int)$_GET['eventId']:0;
+            $userId = isset($_GET['userId'])?$_GET['userId']:'';
+            list($status,$message) = $ticket->getTicket($eventId,$userId);
+            var_dump($status,$message);
+            break;
+        case 'time':
+            echo api\json::create(200,'成功',time());
             break;
         default:
             break;

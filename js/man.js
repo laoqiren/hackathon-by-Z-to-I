@@ -52,8 +52,8 @@ $(document).ready(function(){
                 "</div>"+"<div class='sub right-part'>"+"<div class='title'>"+"<h2>"+backData.data[i].title+"</h2>"+"</div>"+"<div class='book'>"+"<button class='btn btn-default btn-lg btn-success left' type='button'>抢票中</button>"+"<button class='btn btn-default btn-lg btn-warning right' type='button'>进入抢票</button>"+"</div>"+"<p class='show-time'></p>"+"<p class='show-time'></p>"+
                 "<div class='progress progress-striped active'>"+"<div class='progress-bar progress-bar-danger' style='width:80%''></div>"+"</div>"+"</div>"+"</div>";
                     var $addObject = $(addString);
-                    console.log($addObject);
-                    $(body).append($addObject);
+                    //console.log($addObject);
+                    $('body').eq(0).append($addObject);
                 }
 
             }
