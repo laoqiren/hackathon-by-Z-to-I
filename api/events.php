@@ -21,9 +21,9 @@ class events
         return $events;
     }
     public function addEvent($data){
-        $sql = 'insert events (`title`,`beginTime`,`endTime`,`total`) VALUES (?,?,?,?)';
+        $sql = 'insert events (`title`,`beginTime`,`endTime`,`total`,`detail`,`imageUrl`) VALUES (?,?,?,?,?,?)';
         $stmt = self::$_db->prepare($sql);
-        $stmt ->bind_param('siii',$data['title'],$data['beginTime'],$data['endTime'],$data['total']);
+        $stmt ->bind_param('siiiss',$data['title'],$data['beginTime'],$data['endTime'],$data['total'],$data['detail'],$data['imageUrl']);
         $stmt ->execute();
         if($stmt ->affected_rows === 0){
             return false;
@@ -31,7 +31,6 @@ class events
             return true;
         }
     }
-
     /**
      * @param $eventId
      * @return mixed
@@ -45,7 +44,13 @@ class events
             redis::getInstance()->setEvent($res);
         };
         return $res;
-
+    }
+    public function getEventIds(){
+        $res = self::$_db->query('select id from events GROUP by id');
+        while($r = $res->fetch_assoc()){
+            $arr[] = (int)$r['id'];
+        }
+        return $arr;
     }
     public function __construct(){
         self::$_db = mysql::getInstance()->getDb();
