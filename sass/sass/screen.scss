@@ -18,6 +18,7 @@ html,body {
 }
 body {
     background:url('../../images/bag.jpg');
+    background-attachment:fixed;
     background-position:50% 50%;
     font-family:$base_font;
 }

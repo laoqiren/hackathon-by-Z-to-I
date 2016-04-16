@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-16 21:49:35
+* @Last Modified time: 2016-04-17 00:50:12
 */
 
 $(document).ready(function(){
@@ -34,4 +34,30 @@ $(document).ready(function(){
     $("button.right").click(function(){
         location.href = "sub.html";
     });
+    $.ajax({
+        url:"../api",
+        type:'post',
+        dataType:'json',
+        success:function(backData){
+            if(backData.status == "200"){
+                console.log("success");
+                var objectSum = backData.data.length;
+                for(var i=0;i<objectSum;i++){
+                    var addString = "<div class='container";
+                    if(i===0){
+                        addString += " first";
+                    }
+                    addString += " id='c"+i+"'>"+
+                "<div class='sub left-part'>"+"<img src='"+backData.data[i].imageUrl+"'>"+
+                "</div>"+"<div class='sub right-part'>"+"<div class='title'>"+"<h2>"+backData.data[i].title+"</h2>"+"</div>"+"<div class='book'>"+"<button class='btn btn-default btn-lg btn-success left' type='button'>抢票中</button>"+"<button class='btn btn-default btn-lg btn-warning right' type='button'>进入抢票</button>"+"</div>"+"<p class='show-time'></p>"+"<p class='show-time'></p>"+
+                "<div class='progress progress-striped active'>"+"<div class='progress-bar progress-bar-danger' style='width:80%''></div>"+"</div>"+"</div>"+"</div>";
+                    var $addObject = $(addString);
+                    $(body).append($addObject);
+                }
+
+            }
+        }
+
+    });
+
 });

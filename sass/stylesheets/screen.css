@@ -77,11 +77,12 @@ html, body {
 /* line 19, ../sass/screen.scss */
 body {
   background: url("../../images/bag.jpg");
+  background-attachment: fixed;
   background-position: 50% 50%;
   font-family: "微软雅黑";
 }
 
-/* line 24, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 .header {
   position: fixed;
   top: 0;
@@ -91,55 +92,55 @@ body {
   background-color: #cacaca;
   opacity: 0.6;
 }
-/* line 32, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .header h1 {
   text-align: center;
   font-size: 30px;
   font-weight: bold;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 39, ../sass/screen.scss */
 img {
   width: 100%;
   height: 100%;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .first {
   margin-top: 20%;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 .show-time {
   color: red;
 }
 
-/* line 48, ../sass/screen.scss */
+/* line 49, ../sass/screen.scss */
 .container {
   width: 100%;
   height: 25%;
   overflow: hidden;
   margin-bottom: 10%;
 }
-/* line 53, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 .container .sub {
   float: left;
 }
-/* line 56, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 .container .left-part {
   width: 30%;
   height: 100%;
   box-sizing: border-box;
   margin-left: 5%;
 }
-/* line 62, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 .container .right-part {
   width: 58%;
   height: 100%;
   margin-left: 5%;
   overflow: hidden;
 }
-/* line 67, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .container .right-part .title {
   height: 40%;
   text-align: center;
@@ -148,30 +149,30 @@ img {
   font-weight: bold;
   display: table;
 }
-/* line 74, ../sass/screen.scss */
+/* line 75, ../sass/screen.scss */
 .container .right-part .title h2 {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 79, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 .container .right-part .book {
   height: 40%;
   text-align: center;
   box-sizing: border-box;
   padding-top: 20px;
 }
-/* line 84, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 .container .right-part .book button {
   width: 45%;
   height: 80%;
   font-size: 15px;
   margin-bottom: 0;
 }
-/* line 90, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 .container .right-part .book button.left {
   margin-right: 5%;
 }
-/* line 94, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 .container .right-part .show-progress {
   height: 20px;
   margin-bottom: 5%;
