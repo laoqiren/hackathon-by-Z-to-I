@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 21:35:37
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 10:00:22
+* @Last Modified time: 2016-04-17 10:15:48
 */
 
 $(document).ready(function(){
@@ -33,7 +33,7 @@ $(document).ready(function(){
     });
     var $showTime = $(".show-time").eq(0);
     var $alert = $('.alert').eq(0);
-    var timer = window.setInterval(function(){
+    var timer = setInterval(function(){
                     currentTime = new Date().getTime()/1000;
                     milusTime = endTime_b - currentTime;
                     lastDay=Math.floor(milusTime/(24*3600));

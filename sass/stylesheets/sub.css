@@ -133,9 +133,9 @@ body {
 
 /* line 57, ../sass/sub.scss */
 .alert {
-  width: 50%;
-  height: 80%;
-  position: fixed;
+  width: 80%;
+  height: 40%;
+  position: absolute;
   bottom: 0;
   left: 10%;
   background-color: white;
