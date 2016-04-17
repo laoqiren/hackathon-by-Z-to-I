@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 10:39:34
+* @Last Modified time: 2016-04-17 10:43:13
 */
 
 $(document).ready(function(){
@@ -63,9 +63,9 @@ $(document).ready(function(){
                 },1000);
                 for(let i=0; i<$buttons.length; i++){
                     $button = $buttons.eq(i);
-                    $(document).on("click",$button,function(){
+                    ($(document).on("click",$button,function(i){
                         location.href = "sub.html" + "#" + $containers.eq(i).attr('id')[1];
-                    });
+                    }))(i);
                 }
             }
         }
