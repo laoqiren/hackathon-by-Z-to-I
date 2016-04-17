@@ -16,6 +16,7 @@ class events
         $res = self::$_db ->query($sql);
         $events = array();
         while($row = $res ->fetch_assoc()){
+            $row['last'] = ticket::getLastTicket($row['id']);
             $events[]=$row;
         }
         return $events;
@@ -41,9 +42,18 @@ class events
             $sql = 'select * from events WHERE id = '.$eventId;
             $res = self::$_db -> query($sql);
             $res = $res ->fetch_assoc();
+            $res['last'] =  ticket::getLastTicket($eventId);
             redis::getInstance()->setEvent($res);
         };
         return $res;
+    }
+    public function getLast($eventId){
+        $res = self::$_db->query('select count(*) as num from attends where event_id = '.$eventId);
+        $row = $res ->fetch_assoc();
+        $res = self::$_db->query('select total from events WHERE id = '.$eventId);
+        $total = $res->fetch_assoc();
+        $total = $total['total'];
+        return $total-$row['num'];
     }
     public function getEventIds(){
         $res = self::$_db->query('select id from events GROUP by id');
