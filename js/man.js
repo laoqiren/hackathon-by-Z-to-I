@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 10:43:13
+* @Last Modified time: 2016-04-17 10:59:55
 */
 
 $(document).ready(function(){
@@ -42,6 +42,7 @@ $(document).ready(function(){
                 showPs = document.getElementsByClassName("show-time");
                 $buttons = $("button.right");
                 var $containers = $('.container');
+
                 var timer = setInterval(function(){
                     for(var i=0; i<showPs.length; i++){
                         currentTime = new Date().getTime()/1000;
@@ -63,9 +64,9 @@ $(document).ready(function(){
                 },1000);
                 for(let i=0; i<$buttons.length; i++){
                     $button = $buttons.eq(i);
-                    ($(document).on("click",$button,function(i){
-                        location.href = "sub.html" + "#" + $containers.eq(i).attr('id')[1];
-                    }))(i);
+                    $(document).on("click",$button,function(){
+                        location.href = "sub.html" + "#" + i;
+                    });
                 }
             }
         }
