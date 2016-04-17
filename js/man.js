@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 06:51:08
+* @Last Modified time: 2016-04-17 07:06:35
 */
 
 $(document).ready(function(){
@@ -15,12 +15,7 @@ $(document).ready(function(){
     var startTimes = [];
     var objectSum = 0;
     var endTime ;
-    $(document).on("click","button.right",function(){
-        location.href = "sub.html";
-        $.ajax({
-
-        });
-    });
+    var $buttons,$button;
     $.ajax({
         url:"api.php?action=eventlist",
         type:'get',
@@ -45,6 +40,7 @@ $(document).ready(function(){
                     $('body').eq(0).append($addObject);
                 }
                 showPs = document.getElementsByClassName("show-time");
+                $buttons = $("button.right");
                 var timer = setInterval(function(){
                     for(var i=0; i<showPs.length; i++){
                         currentTime = new Date().getTime();
@@ -64,6 +60,12 @@ $(document).ready(function(){
                         showPs[i].innerHTML = lastDay+"天 "+lastHour+"时 "+lastMiute+"分 "+lastSecond+"秒";
                     }
                 },1000);
+                for(let i=0; i<$buttons.length; i++){
+                    $button = $buttons.eq(i);
+                    $(document).on("click",$button,function(){
+                        location.href = "sub.html" + "#" + i;
+                    });
+                }
             }
         }
 

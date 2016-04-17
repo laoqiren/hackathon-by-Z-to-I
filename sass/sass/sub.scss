@@ -54,6 +54,17 @@ body {
         color:red;
     }
 }
+.alert {
+    width:50%;
+    height:80%;
+    position:fixed;
+    bottom:0;
+    left:10%;
+    background-color:white;
+    opacity:0.6;
+    z-index: 2;
+    display:none;
+}
 .footer {
     height:$footer_height;
     width:100%;

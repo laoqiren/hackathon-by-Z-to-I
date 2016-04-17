@@ -132,6 +132,19 @@ body {
 }
 
 /* line 57, ../sass/sub.scss */
+.alert {
+  width: 50%;
+  height: 80%;
+  position: fixed;
+  bottom: 0;
+  left: 10%;
+  background-color: white;
+  opacity: 0.6;
+  z-index: 2;
+  display: none;
+}
+
+/* line 68, ../sass/sub.scss */
 .footer {
   height: 10%;
   width: 100%;
@@ -139,7 +152,7 @@ body {
   bottom: 0;
   left: 0;
 }
-/* line 63, ../sass/sub.scss */
+/* line 74, ../sass/sub.scss */
 .footer button {
   width: 100%;
   height: 100%;
