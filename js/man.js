@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 10:59:55
+* @Last Modified time: 2016-04-17 11:35:32
 */
 
 $(document).ready(function(){
@@ -16,6 +16,7 @@ $(document).ready(function(){
     var objectSum = 0;
     var endTime ;
     var $buttons,$button;
+    var id_b = [];
     $.ajax({
         url:"api.php?action=eventlist",
         type:'get',
@@ -29,6 +30,7 @@ $(document).ready(function(){
                     if(i===0){
                         addString += " first";
                     }
+                    id_b.push(backData.data[i].id);
                     addString += " id='c"+backData.data[i].id+"'>"+
                 "<div class='sub left-part'>"+"<img src='"+backData.data[i].imageUrl+"'>"+
                 "</div>"+"<div class='sub right-part'>"+"<div class='title'>"+"<h2>"+backData.data[i].title+"</h2>"+"</div>"+"<div class='book'>"+"<button class='btn btn-default btn-lg btn-success left' type='button'>抢票中</button>"+"<button class='btn btn-default btn-lg btn-warning right' type='button'>进入抢票</button>"+"</div>"+"<p class='show-time'></p>"+
@@ -62,11 +64,13 @@ $(document).ready(function(){
                         showPs[i].innerHTML = lastDay+"天 "+lastHour+"时 "+lastMiute+"分 "+lastSecond+"秒";
                     }
                 },1000);
-                for(let i=0; i<$buttons.length; i++){
+                for(var i=0; i<$buttons.length; i++){
                     $button = $buttons.eq(i);
-                    $(document).on("click",$button,function(){
-                        location.href = "sub.html" + "#" + i;
-                    });
+                    (function(i){
+                        $button.get(0).onclick=function() {
+                            location.href = "sub.html" + "#" + id_b[i];
+                        };
+                    })(i);
                 }
             }
         }

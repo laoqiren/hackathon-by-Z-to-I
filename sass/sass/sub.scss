@@ -55,11 +55,11 @@ body {
     }
 }
 .alert {
-    width:80%;
+    width:60%;
     height:40%;
-    position:absolute;
+    position:fixed;
     bottom:0;
-    left:10%;
+    left:20%;
     background-color:white;
     opacity:0.6;
     z-index: 2;
