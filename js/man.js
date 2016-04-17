@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 10:01:07
+* @Last Modified time: 2016-04-17 10:39:34
 */
 
 $(document).ready(function(){
@@ -29,7 +29,7 @@ $(document).ready(function(){
                     if(i===0){
                         addString += " first";
                     }
-                    addString += " id='c"+i+"'>"+
+                    addString += " id='c"+backData.data[i].id+"'>"+
                 "<div class='sub left-part'>"+"<img src='"+backData.data[i].imageUrl+"'>"+
                 "</div>"+"<div class='sub right-part'>"+"<div class='title'>"+"<h2>"+backData.data[i].title+"</h2>"+"</div>"+"<div class='book'>"+"<button class='btn btn-default btn-lg btn-success left' type='button'>抢票中</button>"+"<button class='btn btn-default btn-lg btn-warning right' type='button'>进入抢票</button>"+"</div>"+"<p class='show-time'></p>"+
                 "<div class='progress progress-striped active'>"+"<div class='progress-bar progress-bar-danger' style='width:80%''></div>"+"</div>"+"</div>"+"</div>";
@@ -41,6 +41,7 @@ $(document).ready(function(){
                 }
                 showPs = document.getElementsByClassName("show-time");
                 $buttons = $("button.right");
+                var $containers = $('.container');
                 var timer = setInterval(function(){
                     for(var i=0; i<showPs.length; i++){
                         currentTime = new Date().getTime()/1000;
@@ -63,7 +64,7 @@ $(document).ready(function(){
                 for(let i=0; i<$buttons.length; i++){
                     $button = $buttons.eq(i);
                     $(document).on("click",$button,function(){
-                        location.href = "sub.html" + "#" + i;
+                        location.href = "sub.html" + "#" + $containers.eq(i).attr('id')[1];
                     });
                 }
             }
