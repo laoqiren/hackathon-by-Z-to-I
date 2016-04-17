@@ -36,7 +36,7 @@
             $eventId = isset($_GET['eventId'])?(int)$_GET['eventId']:0;
             $userId = isset($_GET['userId'])?$_GET['userId']:'';
             list($status,$message) = $ticket->getTicket($eventId,$userId);
-            var_dump($status,$message);
+            echo api\json::create($status,$message,array());
             break;
         case 'time':
             echo api\json::create(200,'成功',time());
