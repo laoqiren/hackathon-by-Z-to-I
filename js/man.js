@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 09:25:45
+* @Last Modified time: 2016-04-17 10:01:07
 */
 
 $(document).ready(function(){
@@ -46,13 +46,13 @@ $(document).ready(function(){
                         currentTime = new Date().getTime()/1000;
                         endTime = parseInt(endTimes[i],10);
                         milusTime = endTime - currentTime;
-                        lastDay=Math.floor(milusTime/(24*3600*1000));
-                        leave1=milusTime%(24*3600*1000);
-                        lastHour=Math.floor(leave1/(3600*1000));
-                        leave2=leave1%(3600*1000);
-                        lastMiute=Math.floor(leave2/(60*1000));
-                        leave3=leave2%(60*1000);
-                        lastSecond=Math.round(leave3/1000);
+                        lastDay=Math.floor(milusTime/(24*3600));
+                        leave1=milusTime%(24*3600);
+                        lastHour=Math.floor(leave1/(3600));
+                        leave2=leave1%(3600);
+                        lastMiute=Math.floor(leave2/(60));
+                        leave3=leave2%(60);
+                        lastSecond=Math.round(leave3);
                         /*if((lastDay===0)&&(lastDay === lastHour)&&(lastHour===lastMiute)&&(lastMiute===lastSecond)){
                             clearInterval(timer);
                             return;

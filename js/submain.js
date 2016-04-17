@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 21:35:37
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 09:37:06
+* @Last Modified time: 2016-04-17 10:00:22
 */
 
 $(document).ready(function(){
@@ -33,16 +33,16 @@ $(document).ready(function(){
     });
     var $showTime = $(".show-time").eq(0);
     var $alert = $('.alert').eq(0);
-    var timer = setInterval(function(){
+    var timer = window.setInterval(function(){
                     currentTime = new Date().getTime()/1000;
                     milusTime = endTime_b - currentTime;
-                    lastDay=Math.floor(milusTime/(24*3600*1000));
-                    leave1=milusTime%(24*3600*1000);
-                    lastHour=Math.floor(leave1/(3600*1000));
-                    leave2=leave1%(3600*1000);
-                    lastMiute=Math.floor(leave2/(60*1000));
-                    leave3=leave2%(60*1000);
-                    lastSecond=Math.round(leave3/1000);
+                    lastDay=Math.floor(milusTime/(24*3600));
+                    leave1=milusTime%(24*3600);
+                    lastHour=Math.floor(leave1/(3600));
+                    leave2=leave1%(3600);
+                    lastMiute=Math.floor(leave2/(60));
+                    leave3=leave2%(60);
+                    lastSecond=Math.round(leave3);
                     /*if((lastDay===0)&&(lastDay === lastHour)&&(lastHour===lastMiute)&&(lastMiute===lastSecond)){
                         clearInterval(timer);
                         return;
@@ -65,5 +65,7 @@ $(document).ready(function(){
             }
         });
     });
-
+    $(document).click(function(){
+        $alert.css('display','none');
+    });
 });
