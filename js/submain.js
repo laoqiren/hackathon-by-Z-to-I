@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 21:35:37
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 08:54:38
+* @Last Modified time: 2016-04-17 09:37:06
 */
 
 $(document).ready(function(){
@@ -27,14 +27,14 @@ $(document).ready(function(){
             replace(/年|月/g,"-").replace(/日/g," ");
             endTime = new Date(parseInt(backData.data.endTime)*1000).toLocaleString().
             replace(/年|月/g,"-").replace(/日/g," ");
-            addString += "<div class='header'>"+"<h1>"+backData.data.title+"</h1>"+"</div>"+"<div class='poster'>"+"<img src='"+backData.data.imageUrl+"'>"+"</div>"+"<div class='content-detail'>"+"<dl>"+ "<dt>介绍</dt>"+"<dd>"+backData.data.detail+"</dd>"+"<dt>开始时间</dt>"+"<dd>"+startTime+"</dd>"+"<dt>结束时间</dt>"+"<dd>"+endTime+"</dd>"+"<dt>总票数</dt>"+"<dd>"+parseInt(backData.data.total)+"</dd>"+"<dt>剩余票数</dt>"+"<dd>"+parseInt(backData.data.last)+"</dd>"+"</dl>"+"<p>抢票倒计时: </p>"+"<p class='show-time'></p>"+"</div>";
-            $('body').append(addString);
+            addString += "<div class='header'>"+"<h1>"+backData.data.title+"</h1>"+"</div>"+"<div class='poster'>"+"<img src='"+backData.data.imageUrl+"'>"+"</div>"+"<div class='content-detail'>"+"<dl>"+ "<dt>介绍</dt>"+"<dd>"+backData.data.detail+"</dd>"+"<dt>开始时间</dt>"+"<dd>"+startTime+"</dd>"+"<dt>结束时间</dt>"+"<dd>"+endTime+"</dd>"+"<dt>总票数</dt>"+"<dd>"+parseInt(backData.data.total)+"</dd>"+"<dt>剩余票数</dt>"+"<dd>"+parseInt(backData.data.last)+"</dd>"+"</dl>"+"<p>抢票倒计时: </p>"+"</div>";
+            $(addString).insertBefore('#lastTime');
         }
     });
     var $showTime = $(".show-time").eq(0);
     var $alert = $('.alert').eq(0);
     var timer = setInterval(function(){
-                    currentTime = new Date().getTime();
+                    currentTime = new Date().getTime()/1000;
                     milusTime = endTime_b - currentTime;
                     lastDay=Math.floor(milusTime/(24*3600*1000));
                     leave1=milusTime%(24*3600*1000);

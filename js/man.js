@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 11:08:44
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 07:06:35
+* @Last Modified time: 2016-04-17 09:25:45
 */
 
 $(document).ready(function(){
@@ -43,7 +43,7 @@ $(document).ready(function(){
                 $buttons = $("button.right");
                 var timer = setInterval(function(){
                     for(var i=0; i<showPs.length; i++){
-                        currentTime = new Date().getTime();
+                        currentTime = new Date().getTime()/1000;
                         endTime = parseInt(endTimes[i],10);
                         milusTime = endTime - currentTime;
                         lastDay=Math.floor(milusTime/(24*3600*1000));
