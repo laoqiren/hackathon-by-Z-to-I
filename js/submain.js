@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 21:35:37
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 10:15:48
+* @Last Modified time: 2016-04-17 10:26:24
 */
 
 $(document).ready(function(){
@@ -65,7 +65,7 @@ $(document).ready(function(){
             }
         });
     });
-    $(document).click(function(){
+    document.onclick=function(){
         $alert.css('display','none');
-    });
+    };
 });
