@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 21:35:37
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 10:26:24
+* @Last Modified time: 2016-04-17 11:42:53
 */
 
 $(document).ready(function(){
@@ -59,8 +59,8 @@ $(document).ready(function(){
                 'id':id,
                 'userId':userId
             },
-            success:function(){
-                $alert.innerHTML = "抢票成功";
+            success:function(backData){
+                $alert.innerHTML = backData.message;
                 $alert.css({'display':'block'});
             }
         });
