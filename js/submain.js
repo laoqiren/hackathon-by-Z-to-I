@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2016-04-16 21:35:37
 * @Last Modified by:   anchen
-* @Last Modified time: 2016-04-17 11:42:53
+* @Last Modified time: 2016-04-17 11:50:43
 */
 
 $(document).ready(function(){
@@ -52,13 +52,9 @@ $(document).ready(function(){
     var $footer = $(".footer").eq(0);
     $(document).on("click",$footer,function(){
         $.ajax({
-            url:"api.php?action=event&eventId="+id,
+            url:"api.php?action=ticket&eventId="+id+"&userId="+userId,
             type:'get',
             dataType:'json',
-            data:{
-                'id':id,
-                'userId':userId
-            },
             success:function(backData){
                 $alert.innerHTML = backData.message;
                 $alert.css({'display':'block'});
